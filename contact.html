@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Jordan Lynn Interiors</title>
+  <meta name="description" content="Start a conversation about your project. Jordan Lynn Interiors, Long Beach Island, NJ.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="nav nav--solid">
+  <a href="index.html" class="nav__brand">Jordan Lynn Interiors</a>
+  <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <div class="nav__links">
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="process.html">Process</a>
+    <a href="contact.html" class="nav__cta is-active">Work With Me</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <span class="label">Contact</span>
+  <h1>Let's <em>talk</em>.</h1>
+  <p>Every project starts with a conversation. Tell me about the space, the vision, what's working and what isn't — and I'll be in touch within a couple days.</p>
+</header>
+
+<section class="contact-page">
+
+  <div class="contact-page__intro">
+    <span class="label">Direct</span>
+    <h2>Prefer to <em>reach out</em> directly?</h2>
+    <p>No form required. Email, call, or find me on Instagram — whichever's easiest.</p>
+
+    <div class="contact-direct">
+      <div class="contact-direct__item">
+        <span class="label">Email</span>
+        <a href="mailto:jordan@jordanlynninteriors.com">jordan@jordanlynninteriors.com</a>
+      </div>
+      <div class="contact-direct__item">
+        <span class="label">Phone</span>
+        <a href="tel:8566302642">(856) 630-2642</a>
+      </div>
+      <div class="contact-direct__item">
+        <span class="label">Instagram</span>
+        <a href="https://instagram.com/jordanlynninteriors" target="_blank" rel="noopener">@jordanlynninteriors</a>
+      </div>
+      <div class="contact-direct__item">
+        <span class="label">Based</span>
+        <p>Long Beach Island, NJ</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Netlify form. `data-netlify="true"` tells Netlify to capture submissions.
+       `name="contact"` is the form identifier in Netlify's dashboard.
+       `form-name` hidden input is required for the submission to route correctly. -->
+  <form name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" class="form">
+    <input type="hidden" name="form-name" value="contact">
+    <p class="form__hp">
+      <label>Don't fill this out if you're human: <input name="bot-field"></label>
+    </p>
+
+    <div class="form__row">
+      <div class="form__field">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form__field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+    </div>
+
+    <div class="form__row">
+      <div class="form__field">
+        <label for="phone">Phone (optional)</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="form__field">
+        <label for="service">Service Interested In</label>
+        <select id="service" name="service">
+          <option value="">Select an option</option>
+          <option value="Full-Service Design">Full-Service Design</option>
+          <option value="Consultation">Consultation</option>
+          <option value="Product Sourcing">Product Sourcing</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form__field">
+      <label for="location">Project Location</label>
+      <input type="text" id="location" name="location" placeholder="Town, state, or neighborhood">
+    </div>
+
+    <div class="form__field">
+      <label for="message">Tell Me About the Project</label>
+      <textarea id="message" name="message" placeholder="The space, the vision, what's working, what isn't, and roughly when you'd like to start." required></textarea>
+    </div>
+
+    <div class="form__actions">
+      <button type="submit" class="btn btn--ink">Send Message</button>
+      <p class="form__note">I'll respond within a couple business days.</p>
+    </div>
+  </form>
+
+</section>
+
+<footer>
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <h4>Jordan Lynn Interiors</h4>
+      <p>A solo interior design studio based on Long Beach Island, New Jersey. Coastal homes, designed around the people who live in them.</p>
+      <span class="label" style="color: var(--sand);">LBI, NJ</span>
+    </div>
+    <div class="footer__col">
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:jordan@jordanlynninteriors.com">jordan@jordanlynninteriors.com</a></li>
+        <li><a href="tel:8566302642">(856) 630-2642</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h5>Follow</h5>
+      <ul>
+        <li><a href="https://instagram.com/jordanlynninteriors" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Jordan Lynn Interiors. All rights reserved.</span>
+    <span>Long Beach Island, NJ</span>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.nav__toggle');
+  const links = document.querySelector('.nav__links');
+  toggle?.addEventListener('click', () => {
+    const open = links.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      links.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>
