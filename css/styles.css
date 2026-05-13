@@ -358,7 +358,7 @@ section { padding: 7rem var(--gutter); }
 }
 .about__image {
   aspect-ratio: 4/5;
-  background-image: url('IMG_2197.jpeg');
+ background-image: url('../IMG_2197.jpeg');
   background-size: cover;
   background-position: center;
 }
