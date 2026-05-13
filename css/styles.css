@@ -185,7 +185,7 @@ section { padding: 7rem var(--gutter); }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=2000&q=85&auto=format');
+  background-image: url('https://images.unsplash.com/photo-1618220179428-22790b461013?w=2000&q=85&auto=format');
   background-size: cover;
   background-position: center;
   z-index: 0;
