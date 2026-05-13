@@ -586,7 +586,7 @@ section { padding: 7rem var(--gutter); }
 }
 .about-page__image {
   aspect-ratio: 4/5;
-  background-image: url('https://images.unsplash.com/photo-1617103996702-96ff29b1c467?w=1400&q=85&auto=format');
+  background-image: url('../IMG_2199.jpeg');
   background-size: cover;
   background-position: center;
   position: sticky;
