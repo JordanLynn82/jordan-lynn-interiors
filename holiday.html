@@ -191,6 +191,11 @@
     .note .h-label { margin-bottom: 0.35rem; font-size: 12px; }
     .row--steps li { display: flex; flex-direction: column; }
     .row--steps li .ic { order: -1; }
+    .quote-row { display: flex; flex-wrap: wrap; gap: 1.5rem 4rem; border-top: 1px solid var(--oxblood); padding-top: 1.4rem; }
+    .quote-row a { font-family: var(--serif); font-size: 24px; color: var(--pine); }
+    .quote-row a:hover { color: var(--berry); }
+    .quote-row .h-label { margin-bottom: 0.3rem; font-size: 12px; }
+    #quote { scroll-margin-top: 6rem; }
     .row .ic { display: block; width: 40px; height: 40px; margin-bottom: 0.85rem; fill: none; stroke: var(--berry); stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; }
     @media (max-width: 960px) {
       .band__head { grid-template-columns: 1fr; gap: 1rem; }
@@ -231,7 +236,7 @@
     <p class="cover__sub">Seasonal decorating for homes &amp; local businesses</p>
     <div class="cover__booking">Now booking the 2026 season</div>
     <p class="cover__deadline">Book by December 1 to be decorated in time for Christmas</p>
-    <div class="cover__actions"><a href="contact.html" class="h-btn">Book a Walkthrough</a><a href="#packages" class="h-btn h-btn--ghost">See Packages</a></div>
+    <div class="cover__actions"><a href="contact.html" class="h-btn">Book a Walkthrough</a><a href="#quote" class="h-btn h-btn--ghost">Get a Quote</a></div>
   </div>
 </section>
 
@@ -271,11 +276,6 @@
   </ul>
 </section>
 
-<!-- GOOD TO KNOW -->
-<section class="band band--note">
-  <p class="note"><span class="h-label">Good to Know</span>I don't hang exterior lights or do any roof or ladder work. Outdoor décor stays at ground level: front doors, porches, entries and planters.</p>
-</section>
-
 <!-- PROCESS -->
 <section class="band">
   <div class="band__head">
@@ -293,22 +293,19 @@
   </ol>
 </section>
 
-<!-- PACKAGES -->
-<section class="band" id="packages">
+<!-- QUOTES -->
+<section class="band" id="quote">
   <div class="band__head">
     <div>
-      <span class="h-label">Packages</span>
-      <h2 class="h-title">Holiday <em>packages</em></h2>
+      <span class="h-label">Pricing</span>
+      <h2 class="h-title">Custom <em>quotes</em></h2>
     </div>
-    <p class="h-body">Includes consultation, design &amp; install. Décor billed separately; takedown available. Exterior lights, roof and ladder work not included.</p>
+    <p class="h-body">Every space is different, so every project is quoted to fit. Call or email and I'll put together a quote for you.</p>
   </div>
-  <ul class="row row--pkg">
-    <li><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M9 27V5h14v22M6 27h20"/><circle cx="16" cy="13" r="3.2"/><circle cx="20" cy="19" r=".6"/></svg><strong>Front Door</strong><b>$250</b><span>Wreath, garland &amp; entry</span></li>
-    <li><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 9 14h4l-6 9h18l-6-9h4z"/><path d="M16 23v5M13 28h6"/></svg><strong>Signature</strong><b>$750</b><span>Tree, mantel &amp; front door</span></li>
-    <li><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 15 16 6l11 9M8 12.5V26h16V12.5M13.5 26v-6h5v6"/></svg><strong>The Full Look</strong><b>from $1,500</b><span>Your main living spaces, dining room &amp; front porch</span></li>
-    <li><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="11" width="22" height="14" rx="1.5"/><path d="M12 11V8h8v3M5 17h22"/></svg><strong>Business</strong><b>from $500</b><span>Windows, entries &amp; dining rooms</span></li>
-    <li><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M10 13h4v13h-4zM18 13h4v13h-4zM12 13v-2M20 13v-2M7 26h18"/><path d="M12 6.5c1 1.2 1 2.6 0 3.3-1-.7-1-2.1 0-3.3zM20 6.5c1 1.2 1 2.6 0 3.3-1-.7-1-2.1 0-3.3z"/></svg><strong>Dinner Party</strong><b>custom quote</b><span>Table &amp; room styling, book 1 month ahead</span></li>
-  </ul>
+  <div class="quote-row">
+    <a href="tel:8566302642"><span class="h-label">Call or Text</span>856-630-2642</a>
+    <a href="mailto:jordan@jordanlynninteriors.com"><span class="h-label">Email</span>jordan@jordanlynninteriors.com</a>
+  </div>
 </section>
 
 <!-- DINNER PARTIES -->
