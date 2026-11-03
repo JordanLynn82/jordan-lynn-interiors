@@ -206,6 +206,19 @@
     .dinner__inner { padding-left: 0; padding-right: 0; }
     .panels { max-width: 1200px; gap: 4rem; }
     .panels .panel { padding-left: 0; padding-right: 0; }
+    /* Process: feature band so it stands out */
+    .band-wrap--feature { background: var(--oxblood); margin-top: 4.5rem; }
+    .band--feature { padding: 4.5rem var(--gutter) 4.5rem; }
+    .band--feature .h-label { color: #e8c9b8; }
+    .band--feature .h-title { color: var(--paper); }
+    .band--feature .h-title em { color: #f1d6c7; }
+    .band--feature .h-body { color: rgba(255, 252, 247, 0.85); }
+    .band--feature .row li { border-top: 1px solid rgba(255, 252, 247, 0.35); }
+    .band--feature .row strong { color: var(--paper); font-size: 17px; letter-spacing: 0.08em; }
+    .band--feature .row span { color: rgba(255, 252, 247, 0.88); }
+    .band--feature .row--steps li::before { color: #f1d6c7; font-size: 2.6rem; font-style: italic; }
+    .band--feature .row .ic { stroke: #f1d6c7; }
+    .band-wrap--feature + .band { padding-top: 4.5rem; }
   </style>
 </head>
 <body class="holiday">
@@ -277,7 +290,8 @@
 </section>
 
 <!-- PROCESS -->
-<section class="band">
+<div class="band-wrap--feature">
+<section class="band band--feature">
   <div class="band__head">
     <div>
       <span class="h-label">The Process</span>
@@ -292,6 +306,7 @@
     <li><svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 9h14v13H4zM18 13h5l4 4.5V22h-9"/><circle cx="9" cy="23.5" r="2.3"/><circle cx="22" cy="23.5" r="2.3"/></svg><strong>Install Day</strong><span>I bring everything over, then place and arrange it all.</span></li>
   </ol>
 </section>
+</div>
 
 <!-- QUOTES -->
 <section class="band" id="quote">
