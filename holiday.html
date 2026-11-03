@@ -4,47 +4,168 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Holiday Styling — Jordan Lynn Interiors</title>
-  <meta name="description" content="Seasonal holiday decorating for homes and local businesses on Long Beach Island and across South Jersey. Design, install and takedown, booking now for the 2026 season.">
+  <meta name="description" content="Seasonal holiday decorating for homes and local businesses on Long Beach Island and across South Jersey. Now booking the 2026 season.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    /* Holiday page accents — scoped to this page only */
-    .holiday { --berry: #7a0305; --deep-berry: #4c0101; --pine: #1f4d35; --sage: #e6eee7; }
-    .holiday .label { color: var(--berry); }
-    .holiday em { color: var(--berry); }
-    .holiday .page-header { background: var(--sage); border-top: 5px solid var(--deep-berry); }
-    .holiday .page-header h1 { color: var(--pine); }
-    .holiday-deadline { margin-top: 2rem !important; color: var(--pine) !important; font-weight: 500; }
-    .holiday-deadline strong { color: var(--berry); }
+    /* ---------- Holiday page: matches the Canva brochure ---------- */
+    .holiday {
+      --paper: #fffcf7;
+      --sage: #e6eee7;
+      --berry: #7a0305;
+      --oxblood: #4c0101;
+      --pine: #1f4d35;
+      --deep-pine: #0a3c23;
+      --caps: 'Cinzel', Georgia, serif;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      background: var(--paper);
+    }
+    .holiday main { padding-top: 5.5rem; }
 
-    .holiday-services { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
-    @media (max-width: 900px) { .holiday-services { grid-template-columns: 1fr; gap: 3.5rem; } }
-    .holiday-services h2 { font-size: clamp(2rem, 3.8vw, 2.75rem); font-weight: 300; line-height: 1.1; margin: 1rem 0 1.25rem; color: var(--pine); }
-    .holiday-services > div > p { color: var(--stone); margin: 0 0 1.5rem; }
-    .holiday .svc-deep__list li::before { background: var(--berry); }
-    .holiday .svc-deep__list li strong { font-weight: 500; color: var(--pine); }
+    /* Shared type */
+    .h-label {
+      font-family: var(--caps);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--berry);
+      display: block;
+      margin-bottom: 1.1rem;
+    }
+    .h-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(2rem, 3.4vw, 2.6rem);
+      line-height: 1.15;
+      color: var(--pine);
+      margin: 0 0 1.5rem;
+    }
+    .h-title em { color: var(--berry); font-style: italic; }
+    .h-body {
+      font-family: var(--serif);
+      font-size: 19px;
+      line-height: 1.55;
+      color: var(--pine);
+      margin: 0 0 1.25rem;
+    }
 
-    .holiday .process { background: var(--pine); }
-    .holiday .process .process__head .label { color: #f4b9b2; }
-    .holiday .process .process__head h2 em { color: #f4b9b2; }
-    .holiday .step__num { color: #f4b9b2; }
+    /* Panels with thin frames, like the trifold */
+    .panels {
+      max-width: 1320px;
+      margin: 0 auto 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0 var(--gutter);
+    }
+    .panels--two { grid-template-columns: 1fr 1fr; }
+    .panel {
+      border: 5px solid var(--oxblood);
+      padding: 3.25rem 2.5rem;
+      background: var(--paper);
+    }
+    .panel + .panel { border-left-width: 0; }
+    .panel.panel--sage { background: var(--sage); border-color: var(--deep-pine); border-left-width: 5px; }
+    .panel--sage + .panel { border-left-width: 0; }
+    .panels > .panel:not(.panel--sage) + .panel--sage { margin-left: -5px; }
+    @media (max-width: 960px) {
+      .panels, .panels--two { grid-template-columns: 1fr; }
+      .panel + .panel, .panel.panel--sage, .panel--sage + .panel { border-left-width: 5px; border-top-width: 0; }
+      .panels > .panel:not(.panel--sage) + .panel--sage { margin-left: 0; }
+    }
 
-    .holiday-packages { background: var(--cream); }
-    .package-grid { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-    @media (max-width: 900px) { .package-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 560px) { .package-grid { grid-template-columns: 1fr; } }
-    .package { background: var(--off-white); border: 1px solid var(--hair); border-top: 5px solid var(--deep-berry); padding: 2rem 1.75rem; }
-    .package:nth-child(even) { border-top-color: var(--pine); }
-    .package h3 { font-size: 1.6rem; color: var(--pine); margin-bottom: 0.25rem; }
-    .package .package__price { font-family: var(--font-display); font-size: 1.6rem; color: var(--berry); margin: 0 0 0.75rem; }
-    .package p { color: var(--stone); font-size: 15px; margin: 0; }
-    .package-note { max-width: var(--max); margin: 2rem auto 0; color: var(--stone); font-size: 14px; text-align: center; }
+    /* Cover */
+    .cover {
+      max-width: 1320px;
+      margin: 0 auto 2.5rem;
+      padding: 0 var(--gutter);
+    }
+    .cover__inner {
+      border: 5px solid var(--oxblood);
+      text-align: center;
+      padding: 4rem 2rem 3.5rem;
+      background: var(--paper);
+    }
+    .cover__brand { font-family: var(--caps); font-weight: 700; letter-spacing: 0.3em; color: var(--berry); font-size: 15px; }
+    .cover__wreath { width: 220px; height: 220px; margin: 2rem auto 1.5rem; display: block; }
+    .cover h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      line-height: 0.95;
+      color: var(--deep-pine);
+      margin: 0 0 1.75rem;
+    }
+    .cover h1 em { display: block; color: var(--berry); font-style: italic; }
+    .cover__sub { font-family: var(--caps); font-size: 15px; letter-spacing: 0.08em; color: var(--deep-pine); max-width: 30ch; margin: 0 auto 2rem; line-height: 1.5; }
+    .cover__booking { font-family: var(--caps); font-weight: 700; font-size: 13px; letter-spacing: 0.22em; color: var(--berry); }
 
-    .holiday .cta h2 { color: var(--pine); }
-    .holiday .btn--ink { background: var(--berry); border-color: var(--berry); }
-    .holiday .btn--ink:hover { background: transparent; color: var(--berry); }
+    /* Service lists */
+    .svc { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--oxblood); }
+    .svc li { padding: 1rem 0 1.1rem; border-bottom: 1px solid var(--oxblood); }
+    .svc li:last-child { border-bottom: 0; }
+    .svc strong {
+      display: block;
+      font-family: var(--caps);
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 0.02em;
+      color: var(--oxblood);
+      margin-bottom: 0.2rem;
+    }
+    .svc li:nth-child(even) strong { color: var(--berry); }
+    .svc span { font-family: var(--serif); font-size: 18px; color: var(--pine); line-height: 1.45; }
+
+    /* Process */
+    .steps-h { list-style: none; padding: 0; margin: 0 0 2.5rem; counter-reset: step; }
+    .steps-h li { display: grid; grid-template-columns: 2rem 1fr; gap: 0.75rem; margin-bottom: 1.4rem; }
+    .steps-h li::before {
+      counter-increment: step;
+      content: counter(step);
+      font-family: var(--serif);
+      font-size: 1.9rem;
+      line-height: 1;
+      color: var(--berry);
+    }
+    .steps-h strong { display: block; font-family: var(--caps); font-weight: 700; font-size: 16px; color: var(--oxblood); }
+    .steps-h span { font-family: var(--serif); font-size: 18px; color: var(--pine); line-height: 1.4; }
+
+    /* Packages card */
+    .pkg { border-top: 5px solid var(--oxblood); background: var(--paper); box-shadow: 0 1px 0 var(--hair) inset; padding: 1.5rem 1.4rem 1.25rem; }
+    .pkg .h-label { font-size: 12px; margin-bottom: 0.9rem; }
+    .pkg__row { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+    .pkg__row + .pkg__desc { margin-bottom: 0.85rem; }
+    .pkg__name { font-family: var(--caps); font-weight: 700; font-size: 15px; color: var(--deep-pine); }
+    .pkg__price { font-family: var(--caps); font-weight: 700; font-size: 15px; color: var(--deep-pine); white-space: nowrap; }
+    .pkg__desc { font-family: var(--serif); font-size: 16px; color: var(--pine); margin: 0; }
+    .pkg__note { font-family: var(--serif); font-size: 15px; color: var(--pine); margin: 0.5rem 0 0; font-style: italic; }
+
+    /* About + contact */
+    .dots { display: flex; gap: 12px; margin: 1.5rem 0 2rem; }
+    .dots i { width: 7px; height: 7px; background: var(--pine); display: block; }
+    .dots i:nth-child(2) { background: var(--berry); }
+    .seasons { font-family: var(--serif); font-size: 22px; line-height: 1.5; color: var(--pine); margin: 0 0 1.75rem; }
+    .ask { font-family: var(--caps); font-weight: 700; font-size: 13px; letter-spacing: 0.06em; color: var(--berry); }
+    .book-text { font-style: italic; font-size: 21px; }
+    .book-text strong { color: var(--berry); }
+    .contact-list { display: grid; gap: 1.1rem; margin: 2rem 0 2.25rem; }
+    .contact-list .h-label { margin-bottom: 0.15rem; font-size: 12px; }
+    .contact-list a, .contact-list p { font-family: var(--serif); font-size: 19px; color: var(--pine); margin: 0; letter-spacing: 0.04em; }
+    .h-btn {
+      display: inline-block;
+      font-family: var(--caps);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      padding: 1rem 1.75rem;
+      background: var(--berry);
+      color: var(--paper);
+      border: 1px solid var(--berry);
+      transition: all 0.2s;
+    }
+    .h-btn:hover { background: transparent; color: var(--berry); }
   </style>
 </head>
 <body class="holiday">
@@ -63,113 +184,134 @@
   </div>
 </nav>
 
-<header class="page-header">
-  <span class="label">Holiday Styling</span>
-  <h1>Holiday, <em>Styled.</em></h1>
-  <p>Seasonal decorating for homes and local businesses on Long Beach Island and across South Jersey. I design the look, bring everything, install it, and come back to take it all down when the season's over.</p>
-  <p class="holiday-deadline">Now booking the 2026 season. Book by <strong>December 1</strong> to have everything up in time for Christmas.</p>
-</header>
+<main>
 
-<!-- SERVICES -->
-<section>
-  <div class="holiday-services">
-    <div>
-      <span class="label">Residential</span>
-      <h2>For your <em>Home</em></h2>
-      <p>Come home to a house that feels like the holidays, without a single trip to the attic.</p>
-      <ul class="svc-deep__list">
-        <li><span><strong>Trees</strong> — designed, lit and decorated, real or faux</span></li>
-        <li><span><strong>Mantels &amp; staircases</strong> — layered garland, stockings and candlelight</span></li>
-        <li><span><strong>Front doors &amp; porches</strong> — wreaths, planters and entry greenery</span></li>
-        <li><span><strong>Tablescapes</strong> — ready-to-host tables for Thanksgiving and holiday dinners</span></li>
-        <li><span><strong>Shore houses</strong> — festive and ready before you arrive for the holidays</span></li>
-      </ul>
-    </div>
-    <div>
-      <span class="label">Commercial</span>
-      <h2>For your <em>Business</em></h2>
-      <p>A beautifully dressed space draws people in. I work around your hours so you never have to close.</p>
-      <ul class="svc-deep__list">
-        <li><span><strong>Storefront windows</strong> — displays that stop people on the sidewalk</span></li>
-        <li><span><strong>Restaurants &amp; bars</strong> — dining rooms, bar tops and entryways</span></li>
-        <li><span><strong>Offices &amp; lobbies</strong> — a warm welcome for clients and staff</span></li>
-        <li><span><strong>Exterior greenery</strong> — garland, wreaths and planters out front</span></li>
-        <li><span><strong>Rentals &amp; listings</strong> — holiday-ready staging for guests and showings</span></li>
-      </ul>
-    </div>
+<!-- COVER -->
+<section class="cover" style="padding-top: 0; padding-bottom: 0;">
+  <div class="cover__inner">
+    <div class="cover__brand">Jordan Lynn Interiors</div>
+    <svg class="cover__wreath" viewBox="0 0 200 200" fill="none" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="100" cy="100" r="64" stroke="#2f6b47" stroke-width="1"/>
+      <g stroke="#2f6b47" stroke-width="1.4" fill="#dce9df">
+        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z"/>
+        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(24 100 100)"/>
+        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(48 100 100)"/>
+        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(72 100 100)"/>
+        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(96 100 100)"/>
+        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(120 100 100)"/>
+        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(144 100 100)"/>
+        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(216 100 100)"/>
+        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(240 100 100)"/>
+        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(264 100 100)"/>
+        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(288 100 100)"/>
+        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(312 100 100)"/>
+        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(336 100 100)"/>
+      </g>
+      <g stroke="#2f6b47" stroke-width="1.4" fill="#2f6b47">
+        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(12 100 100)"/>
+        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(36 100 100)"/>
+        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(60 100 100)"/>
+        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(84 100 100)"/>
+        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(108 100 100)"/>
+        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(132 100 100)"/>
+        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(228 100 100)"/>
+        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(252 100 100)"/>
+        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(276 100 100)"/>
+        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(300 100 100)"/>
+        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(324 100 100)"/>
+        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(348 100 100)"/>
+      </g>
+      <g fill="#7a0305">
+        <circle cx="134" cy="62" r="4"/><circle cx="140" cy="68" r="3"/><circle cx="62" cy="80" r="4"/><circle cx="57" cy="87" r="3"/>
+        <circle cx="150" cy="114" r="4"/><circle cx="56" cy="124" r="4"/><circle cx="100" cy="40" r="4"/><circle cx="107" cy="37" r="3"/>
+      </g>
+      <path d="M100 164 C86 150 72 156 76 166 C80 176 94 170 100 164 Z" fill="#7a0305" stroke="#7a0305" stroke-width="1.4"/>
+      <path d="M100 164 C114 150 128 156 124 166 C120 176 106 170 100 164 Z" fill="#7a0305" stroke="#7a0305" stroke-width="1.4"/>
+      <path d="M98 166 L88 192 M102 166 L112 192" stroke="#7a0305" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="100" cy="164" r="4" fill="#fffcf7" stroke="#7a0305" stroke-width="1.6"/>
+    </svg>
+    <h1>Holiday, <em>Styled</em></h1>
+    <p class="cover__sub">Seasonal decorating for homes &amp; local businesses</p>
+    <div class="cover__booking">Now booking the 2026 season</div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process">
-  <div class="process__head">
-    <span class="label">The Process</span>
-    <h2>Simple from <em>start to finish</em></h2>
-    <p>Seasons I decorate for: Fall &amp; Thanksgiving, Christmas &amp; the winter holidays, New Year's Eve, and spring or summer on request.</p>
+<!-- SERVICES + PROCESS (brochure inside) -->
+<div class="panels">
+  <div class="panel">
+    <span class="h-label">Residential</span>
+    <h2 class="h-title">For your <em>Home</em></h2>
+    <p class="h-body">Come home to a house that feels like the holidays, without a single trip to the attic.</p>
+    <ul class="svc">
+      <li><strong>Trees</strong><span>Designed, lit and decorated, real or faux.</span></li>
+      <li><strong>Mantels &amp; Staircases</strong><span>Layered garland, stockings and candlelight.</span></li>
+      <li><strong>Front Doors &amp; Porches</strong><span>Wreaths, planters and entry greenery.</span></li>
+      <li><strong>Tablescapes</strong><span>Ready-to-host tables for Thanksgiving and holiday dinners.</span></li>
+      <li><strong>Shore Houses</strong><span>Festive and ready before you arrive for the holidays.</span></li>
+    </ul>
   </div>
-  <div class="steps">
-    <div class="step">
-      <div class="step__num">01</div>
-      <h4>Walkthrough</h4>
-      <p>A visit to your space to talk through what you have in mind.</p>
-    </div>
-    <div class="step">
-      <div class="step__num">02</div>
-      <h4>Your vibe</h4>
-      <p>Share your inspo photos and ideas so I can nail your style.</p>
-    </div>
-    <div class="step">
-      <div class="step__num">03</div>
-      <h4>Order the pieces</h4>
-      <p>I order the décor you approve, based on your inspo.</p>
-    </div>
-    <div class="step">
-      <div class="step__num">04</div>
-      <h4>Install day</h4>
-      <p>I bring everything over, then place and arrange it all.</p>
+  <div class="panel panel--sage">
+    <span class="h-label">Commercial</span>
+    <h2 class="h-title">For your <em>Business</em></h2>
+    <p class="h-body">A beautifully dressed space draws people in. I work around your hours so you never have to close.</p>
+    <ul class="svc">
+      <li><strong>Storefront Windows</strong><span>Displays that stop people on the sidewalk.</span></li>
+      <li><strong>Restaurants &amp; Bars</strong><span>Dining rooms, bar tops and entryways.</span></li>
+      <li><strong>Offices &amp; Lobbies</strong><span>A warm welcome for clients and staff.</span></li>
+      <li><strong>Exterior Greenery</strong><span>Garland, wreaths and planters out front.</span></li>
+      <li><strong>Rentals &amp; Listings</strong><span>Holiday-ready staging for guests and showings.</span></li>
+    </ul>
+  </div>
+  <div class="panel">
+    <span class="h-label" style="font-size: 16px; color: var(--oxblood);">The Process</span>
+    <ol class="steps-h" style="margin-top: 1.75rem;">
+      <li><div><strong>Walkthrough</strong><span>A visit to your space to talk through what you have in mind.</span></div></li>
+      <li><div><strong>Your Vibe</strong><span>Share your inspo photos and ideas so I can nail your style.</span></div></li>
+      <li><div><strong>Order the Pieces</strong><span>I order the décor you approve, based on your inspo.</span></div></li>
+      <li><div><strong>Install Day</strong><span>I bring everything over, then place and arrange it all.</span></div></li>
+    </ol>
+    <div class="pkg">
+      <span class="h-label">Packages</span>
+      <div class="pkg__row"><span class="pkg__name">Front Door</span><span class="pkg__price">$250</span></div>
+      <p class="pkg__desc">Wreath, garland &amp; entry</p>
+      <div class="pkg__row"><span class="pkg__name">Signature</span><span class="pkg__price">$750</span></div>
+      <p class="pkg__desc">Tree, mantel &amp; front door</p>
+      <div class="pkg__row"><span class="pkg__name">Whole Home</span><span class="pkg__price">from $1,500</span></div>
+      <p class="pkg__desc">The full house, inside &amp; out</p>
+      <div class="pkg__row"><span class="pkg__name">Business</span><span class="pkg__price">from $500</span></div>
+      <p class="pkg__desc">Windows, entries &amp; dining rooms</p>
+      <p class="pkg__note">Includes consultation, design &amp; install. Décor billed separately; takedown available.</p>
     </div>
   </div>
-</section>
+</div>
 
-<!-- PACKAGES -->
-<section class="holiday-packages">
-  <div class="process__head" style="margin-bottom: 3.5rem;">
-    <span class="label">Packages</span>
-    <h2 style="color: var(--pine);">Find your <em>fit</em></h2>
+<!-- MEET + BOOK (brochure outside) -->
+<div class="panels panels--two">
+  <div class="panel">
+    <span class="h-label">Meet Your Decorator</span>
+    <h2 class="h-title">A little holiday <em>magic,</em> handled~</h2>
+    <p class="h-body">I'm Jordan, an interior designer here on Long Beach Island. Every season I see homes and storefronts that want to feel festive but never quite get there.</p>
+    <p class="h-body">I'll design the look, bring everything, install it, and come back to take it all down when the season's over.</p>
+    <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    <span class="h-label">Seasons I Decorate For</span>
+    <p class="seasons">Fall &amp; Thanksgiving<br>Christmas &amp; Winter Holidays<br>New Year's Eve</p>
+    <span class="ask">Ask about Spring &amp; Summertime</span>
   </div>
-  <div class="package-grid">
-    <div class="package">
-      <h3>Front Door</h3>
-      <p class="package__price">$250</p>
-      <p>Wreath, garland and entry planters.</p>
+  <div class="panel panel--sage">
+    <span class="h-label">Book Your Walkthrough</span>
+    <h2 class="h-title">Let's make it <em>merry~</em></h2>
+    <p class="h-body book-text">Install dates fill quickly. Book by <strong>December 1</strong> to have everything up in time for Christmas.</p>
+    <div class="contact-list">
+      <div><span class="h-label">Call or Text</span><a href="tel:8566302642">856-630-2642</a></div>
+      <div><span class="h-label">Email</span><a href="mailto:jordan@jordanlynninteriors.com">jordan@jordanlynninteriors.com</a></div>
+      <div><span class="h-label">Instagram</span><a href="https://instagram.com/jordanlynninteriors" target="_blank" rel="noopener">@jordanlynninteriors</a></div>
+      <div><span class="h-label">Serving</span><p>Long Beach Island &amp; South Jersey</p></div>
     </div>
-    <div class="package">
-      <h3>Signature</h3>
-      <p class="package__price">$750</p>
-      <p>One tree, one mantel and the front door.</p>
-    </div>
-    <div class="package">
-      <h3>Whole Home</h3>
-      <p class="package__price">from $1,500</p>
-      <p>Trees, mantels, stairs, tables and exterior.</p>
-    </div>
-    <div class="package">
-      <h3>Business</h3>
-      <p class="package__price">from $500</p>
-      <p>Windows, entries, dining rooms and lobbies.</p>
-    </div>
+    <a href="contact.html" class="h-btn">Book a Walkthrough</a>
   </div>
-  <p class="package-note">Includes consultation, design &amp; install. Décor billed separately; takedown available.</p>
-</section>
+</div>
 
-<!-- CTA -->
-<section class="cta">
-  <div class="wrap">
-    <h2>Let's make it <em>merry.</em></h2>
-    <p>Install dates fill quickly. Reach out by December 1 to book your walkthrough. Call or text (856) 630-2642, or send me a note.</p>
-    <a href="contact.html" class="btn btn--ink">Book a Walkthrough</a>
-  </div>
-</section>
+</main>
 
 <footer>
   <div class="footer__grid">
