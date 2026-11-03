@@ -172,7 +172,29 @@
     .h-btn--ghost:hover { background: var(--berry); color: var(--paper); }
     .cover__deadline { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--pine); margin: 0.75rem 0 1.75rem; }
     .cover__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    #packages { scroll-margin-top: 7rem; }
+        /* Horizontal sections */
+    .band { max-width: 1200px; margin: 0 auto; padding: 4.5rem var(--gutter) 1rem; scroll-margin-top: 6rem; }
+    .band__head { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; margin-bottom: 2.25rem; }
+    .band__head .h-title { margin-bottom: 0; }
+    .band__head .h-body { margin: 0; max-width: 46ch; }
+    .row { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; }
+    .row--4 { grid-template-columns: repeat(4, 1fr); }
+    .row li { border-top: 1px solid var(--oxblood); padding-top: 1.1rem; }
+    .row strong { display: block; font-family: var(--caps); font-weight: 700; font-size: 15px; color: var(--oxblood); margin-bottom: 0.4rem; }
+    .row span { display: block; font-family: var(--serif); font-size: 19px; line-height: 1.45; color: var(--pine); }
+    .row b { display: block; font-family: var(--serif); font-weight: 400; font-size: 28px; color: var(--berry); margin-bottom: 0.3rem; }
+    .row--steps { counter-reset: step; }
+    .row--steps li::before { counter-increment: step; content: counter(step); display: block; font-family: var(--serif); font-size: 2rem; line-height: 1; color: var(--berry); margin-bottom: 0.6rem; }
+    .row--pkg li { border-top-width: 3px; }
+    @media (max-width: 960px) {
+      .band__head { grid-template-columns: 1fr; gap: 1rem; }
+      .row, .row--4 { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) { .row, .row--4 { grid-template-columns: 1fr; gap: 1.5rem; } }
+    .dinner { margin-top: 4rem; max-width: 1200px; }
+    .dinner__inner { padding-left: 0; padding-right: 0; }
+    .panels { max-width: 1200px; gap: 4rem; }
+    .panels .panel { padding-left: 0; padding-right: 0; }
   </style>
 </head>
 <body class="holiday">
@@ -208,56 +230,76 @@
   </div>
 </section>
 
-<!-- SERVICES + PROCESS (brochure inside) -->
-<div class="panels">
-  <div class="panel">
-    <span class="h-label">Residential</span>
-    <h2 class="h-title">For your <em>Home</em></h2>
-    <p class="h-body">Come home to a house that feels like the holidays, without a single trip to the attic.</p>
-    <ul class="svc">
-      <li><strong>Trees</strong><span>Designed, lit and decorated, real or faux.</span></li>
-      <li><strong>Mantels &amp; Staircases</strong><span>Layered garland, stockings and candlelight.</span></li>
-      <li><strong>Front Doors &amp; Porches</strong><span>Wreaths, planters and entry greenery.</span></li>
-      <li><strong>Tablescapes</strong><span>Ready-to-host tables for Thanksgiving and holiday dinners.</span></li>
-      <li><strong>Shore Houses</strong><span>Festive and ready before you arrive for the holidays.</span></li>
-    </ul>
-  </div>
-  <div class="panel panel--sage">
-    <span class="h-label">Commercial</span>
-    <h2 class="h-title">For your <em>Business</em></h2>
-    <p class="h-body">A beautifully dressed space draws people in. I work around your hours so you never have to close.</p>
-    <ul class="svc">
-      <li><strong>Storefront Windows</strong><span>Displays that stop people on the sidewalk.</span></li>
-      <li><strong>Restaurants &amp; Bars</strong><span>Dining rooms, bar tops and entryways.</span></li>
-      <li><strong>Offices &amp; Lobbies</strong><span>A warm welcome for clients and staff.</span></li>
-      <li><strong>Exterior Greenery</strong><span>Garland, wreaths and planters out front.</span></li>
-      <li><strong>Rentals &amp; Listings</strong><span>Holiday-ready staging for guests and showings.</span></li>
-    </ul>
-  </div>
-  <div class="panel">
-    <span class="h-label" style="font-size: 16px; color: var(--oxblood);">The Process</span>
-    <ol class="steps-h" style="margin-top: 1.75rem;">
-      <li><div><strong>Walkthrough</strong><span>A visit to your space to talk through what you have in mind.</span></div></li>
-      <li><div><strong>Inspiration</strong><span>Provide photos of looks you love. Don't have an idea? I'll create a proposal for you.</span></div></li>
-      <li><div><strong>Order the Pieces</strong><span>I order the décor you approve, based on your photos or my proposal.</span></div></li>
-      <li><div><strong>Install Day</strong><span>I bring everything over, then place and arrange it all.</span></div></li>
-    </ol>
-    <div class="pkg" id="packages">
-      <span class="h-label">Packages</span>
-      <div class="pkg__row"><span class="pkg__name">Front Door</span><span class="pkg__price">$250</span></div>
-      <p class="pkg__desc">Wreath, garland &amp; entry</p>
-      <div class="pkg__row"><span class="pkg__name">Signature</span><span class="pkg__price">$750</span></div>
-      <p class="pkg__desc">Tree, mantel &amp; front door</p>
-      <div class="pkg__row"><span class="pkg__name">Whole Home</span><span class="pkg__price">from $1,500</span></div>
-      <p class="pkg__desc">The full house, inside &amp; out</p>
-      <div class="pkg__row"><span class="pkg__name">Business</span><span class="pkg__price">from $500</span></div>
-      <p class="pkg__desc">Windows, entries &amp; dining rooms</p>
-      <div class="pkg__row"><span class="pkg__name">Dinner Party</span><span class="pkg__price">custom quote</span></div>
-      <p class="pkg__desc">Table &amp; room styling, book 1 month ahead</p>
-      <p class="pkg__note">Includes consultation, design &amp; install. Décor billed separately; takedown available.</p>
+<!-- HOME -->
+<section class="band">
+  <div class="band__head">
+    <div>
+      <span class="h-label">Residential</span>
+      <h2 class="h-title">For your <em>Home</em></h2>
     </div>
+    <p class="h-body">Come home to a house that feels like the holidays, without a single trip to the attic.</p>
   </div>
-</div>
+  <ul class="row">
+    <li><strong>Trees</strong><span>Designed, lit and decorated, real or faux.</span></li>
+    <li><strong>Mantels &amp; Staircases</strong><span>Layered garland, stockings and candlelight.</span></li>
+    <li><strong>Front Doors &amp; Porches</strong><span>Wreaths, planters and entry greenery.</span></li>
+    <li><strong>Tablescapes</strong><span>Ready-to-host tables for Thanksgiving and holiday dinners.</span></li>
+    <li><strong>Shore Houses</strong><span>Festive and ready before you arrive for the holidays.</span></li>
+  </ul>
+</section>
+
+<!-- BUSINESS -->
+<section class="band">
+  <div class="band__head">
+    <div>
+      <span class="h-label">Commercial</span>
+      <h2 class="h-title">For your <em>Business</em></h2>
+    </div>
+    <p class="h-body">A beautifully dressed space draws people in. I work around your hours so you never have to close.</p>
+  </div>
+  <ul class="row">
+    <li><strong>Storefront Windows</strong><span>Displays that stop people on the sidewalk.</span></li>
+    <li><strong>Restaurants &amp; Bars</strong><span>Dining rooms, bar tops and entryways.</span></li>
+    <li><strong>Offices &amp; Lobbies</strong><span>A warm welcome for clients and staff.</span></li>
+    <li><strong>Exterior Greenery</strong><span>Garland, wreaths and planters out front.</span></li>
+    <li><strong>Rentals &amp; Listings</strong><span>Holiday-ready staging for guests and showings.</span></li>
+  </ul>
+</section>
+
+<!-- PROCESS -->
+<section class="band">
+  <div class="band__head">
+    <div>
+      <span class="h-label">The Process</span>
+      <h2 class="h-title">How it <em>works</em></h2>
+    </div>
+    <p class="h-body">Four steps from first visit to install day.</p>
+  </div>
+  <ol class="row row--4 row--steps">
+    <li><strong>Walkthrough</strong><span>A visit to your space to talk through what you have in mind.</span></li>
+    <li><strong>Inspiration</strong><span>Provide photos of looks you love. Don't have an idea? I'll create a proposal for you.</span></li>
+    <li><strong>Order the Pieces</strong><span>I order the décor you approve, based on your photos or my proposal.</span></li>
+    <li><strong>Install Day</strong><span>I bring everything over, then place and arrange it all.</span></li>
+  </ol>
+</section>
+
+<!-- PACKAGES -->
+<section class="band" id="packages">
+  <div class="band__head">
+    <div>
+      <span class="h-label">Packages</span>
+      <h2 class="h-title">Holiday <em>packages</em></h2>
+    </div>
+    <p class="h-body">Includes consultation, design &amp; install. Décor billed separately; takedown available.</p>
+  </div>
+  <ul class="row row--pkg">
+    <li><strong>Front Door</strong><b>$250</b><span>Wreath, garland &amp; entry</span></li>
+    <li><strong>Signature</strong><b>$750</b><span>Tree, mantel &amp; front door</span></li>
+    <li><strong>Whole Home</strong><b>from $1,500</b><span>The full house, inside &amp; out</span></li>
+    <li><strong>Business</strong><b>from $500</b><span>Windows, entries &amp; dining rooms</span></li>
+    <li><strong>Dinner Party</strong><b>custom quote</b><span>Table &amp; room styling, book 1 month ahead</span></li>
+  </ul>
+</section>
 
 <!-- DINNER PARTIES -->
 <section class="dinner" style="padding-top: 0; padding-bottom: 0;">
