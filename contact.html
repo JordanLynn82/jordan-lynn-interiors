@@ -60,13 +60,15 @@
     </div>
   </div>
 
-  <!-- Netlify form. `data-netlify="true"` tells Netlify to capture submissions.
-       `name="contact"` is the form identifier in Netlify's dashboard.
-       `form-name` hidden input is required for the submission to route correctly. -->
-  <form name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" class="form">
-    <input type="hidden" name="form-name" value="contact">
+  <!-- Form submissions are emailed to Jordan through FormSubmit (formsubmit.co).
+       The first submission sends an activation email that must be confirmed once. -->
+  <form action="https://formsubmit.co/jordan@jordanlynninteriors.com" method="POST" class="form">
+    <input type="hidden" name="_subject" value="New inquiry from jordanlynninteriors.com">
+    <input type="hidden" name="_next" value="https://jordanlynninteriors.com/thanks.html">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
     <p class="form__hp">
-      <label>Don't fill this out if you're human: <input name="bot-field"></label>
+      <label>Don't fill this out if you're human: <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
     </p>
 
     <div class="form__row">
