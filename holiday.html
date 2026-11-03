@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Holiday Styling — Jordan Lynn Interiors</title>
-  <meta name="description" content="Seasonal holiday decorating for homes and local businesses on Long Beach Island and across South Jersey. Now booking the 2026 season.">
+  <meta name="description" content="Seasonal holiday decorating and dinner party styling for homes and local businesses on Long Beach Island and across South Jersey. Now booking the 2026 season.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -136,6 +136,13 @@
     .pkg__desc { font-family: var(--serif); font-size: 16px; color: var(--pine); margin: 0; }
     .pkg__note { font-family: var(--serif); font-size: 15px; color: var(--pine); margin: 0.5rem 0 0; font-style: italic; }
 
+    /* Dinner parties */
+    .dinner { max-width: 1320px; margin: 0 auto 2.5rem; padding: 0 var(--gutter); }
+    .dinner__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; padding: 3.75rem 2.5rem; align-items: start; }
+    @media (max-width: 960px) { .dinner__inner { grid-template-columns: 1fr; gap: 2rem; } }
+    .dinner__note { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--berry); margin: 1.5rem 0 0; }
+    .dinner__note strong { font-style: normal; font-family: var(--caps); font-size: 14px; letter-spacing: 0.12em; display: block; margin-bottom: 0.2rem; }
+
     /* About + contact */
     .dots { display: flex; gap: 12px; margin: 1.5rem 0 2rem; }
     .dots i { width: 7px; height: 7px; background: var(--pine); display: block; }
@@ -236,10 +243,30 @@
       <p class="pkg__desc">The full house, inside &amp; out</p>
       <div class="pkg__row"><span class="pkg__name">Business</span><span class="pkg__price">from $500</span></div>
       <p class="pkg__desc">Windows, entries &amp; dining rooms</p>
+      <div class="pkg__row"><span class="pkg__name">Dinner Party</span><span class="pkg__price">custom quote</span></div>
+      <p class="pkg__desc">Table &amp; room styling, book 1 month ahead</p>
       <p class="pkg__note">Includes consultation, design &amp; install. Décor billed separately; takedown available.</p>
     </div>
   </div>
 </div>
+
+<!-- DINNER PARTIES -->
+<section class="dinner" style="padding-top: 0; padding-bottom: 0;">
+  <div class="dinner__inner">
+    <div>
+      <span class="h-label">Entertaining</span>
+      <h2 class="h-title">Dinner parties, <em>styled</em></h2>
+      <p class="h-body">The elegant, candlelit tables you save on Pinterest, set for real in your home. I style the table and the room around it, so you can focus on your guests.</p>
+      <p class="dinner__note"><strong>Plan ahead</strong>Please book at least one month before your event so I can source everything for your look.</p>
+    </div>
+    <ul class="svc">
+      <li><strong>Tablescapes</strong><span>Linens, chargers, place settings and napkin styling.</span></li>
+      <li><strong>Florals &amp; Candlelight</strong><span>Centerpieces, tapers and greenery down the length of the table.</span></li>
+      <li><strong>Room Styling</strong><span>The bar, entry and gathering spaces dressed to match.</span></li>
+      <li><strong>Finishing Touches</strong><span>Menus, place cards and the little details guests remember.</span></li>
+    </ul>
+  </div>
+</section>
 
 <!-- MEET + BOOK (brochure outside) -->
 <div class="panels panels--two">
