@@ -82,14 +82,15 @@
       background: var(--paper);
     }
     .cover__brand { font-family: var(--caps); font-weight: 700; letter-spacing: 0.3em; color: var(--berry); font-size: 15px; }
-    .cover__wreath { width: 220px; height: 220px; margin: 2rem auto 1.5rem; display: block; }
+    .cover__wreath { width: 260px; height: auto; margin: 2.25rem auto 1.25rem; display: block; }
+    .cover__garland { width: 220px; height: auto; margin: -0.75rem auto 2rem; display: block; }
     .cover h1 {
       font-family: var(--serif);
       font-weight: 400;
       font-size: clamp(3.5rem, 8vw, 6rem);
       line-height: 0.95;
       color: var(--deep-pine);
-      margin: 0 0 1.75rem;
+      margin: 0 0 1.25rem;
     }
     .cover h1 em { display: block; color: var(--berry); font-style: italic; }
     .cover__sub { font-family: var(--caps); font-size: 15px; letter-spacing: 0.08em; color: var(--deep-pine); max-width: 30ch; margin: 0 auto 2rem; line-height: 1.5; }
@@ -183,47 +184,9 @@
 <section class="cover" style="padding-top: 0; padding-bottom: 0;">
   <div class="cover__inner">
     <div class="cover__brand">Jordan Lynn Interiors</div>
-    <svg class="cover__wreath" viewBox="0 0 200 200" fill="none" stroke-linejoin="round" aria-hidden="true">
-      <circle cx="100" cy="100" r="64" stroke="#2f6b47" stroke-width="1"/>
-      <g stroke="#2f6b47" stroke-width="1.4" fill="#dce9df">
-        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z"/>
-        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(24 100 100)"/>
-        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(48 100 100)"/>
-        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(72 100 100)"/>
-        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(96 100 100)"/>
-        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(120 100 100)"/>
-        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(144 100 100)"/>
-        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(216 100 100)"/>
-        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(240 100 100)"/>
-        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(264 100 100)"/>
-        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(288 100 100)"/>
-        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(312 100 100)"/>
-        <path d="M88 34 Q100 20 112 32 Q100 42 88 34 Z" transform="rotate(336 100 100)"/>
-      </g>
-      <g stroke="#2f6b47" stroke-width="1.4" fill="#2f6b47">
-        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(12 100 100)"/>
-        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(36 100 100)"/>
-        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(60 100 100)"/>
-        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(84 100 100)"/>
-        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(108 100 100)"/>
-        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(132 100 100)"/>
-        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(228 100 100)"/>
-        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(252 100 100)"/>
-        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(276 100 100)"/>
-        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(300 100 100)"/>
-        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(324 100 100)"/>
-        <path d="M90 46 Q100 34 110 44 Q100 52 90 46 Z" transform="rotate(348 100 100)"/>
-      </g>
-      <g fill="#7a0305">
-        <circle cx="134" cy="62" r="4"/><circle cx="140" cy="68" r="3"/><circle cx="62" cy="80" r="4"/><circle cx="57" cy="87" r="3"/>
-        <circle cx="150" cy="114" r="4"/><circle cx="56" cy="124" r="4"/><circle cx="100" cy="40" r="4"/><circle cx="107" cy="37" r="3"/>
-      </g>
-      <path d="M100 164 C86 150 72 156 76 166 C80 176 94 170 100 164 Z" fill="#7a0305" stroke="#7a0305" stroke-width="1.4"/>
-      <path d="M100 164 C114 150 128 156 124 166 C120 176 106 170 100 164 Z" fill="#7a0305" stroke="#7a0305" stroke-width="1.4"/>
-      <path d="M98 166 L88 192 M102 166 L112 192" stroke="#7a0305" stroke-width="2.4" stroke-linecap="round"/>
-      <circle cx="100" cy="164" r="4" fill="#fffcf7" stroke="#7a0305" stroke-width="1.6"/>
-    </svg>
+    <img class="cover__wreath" src="images/holiday-wreath.png" alt="" width="286" height="286">
     <h1>Holiday, <em>Styled</em></h1>
+    <img class="cover__garland" src="images/holiday-garland.png" alt="" width="230" height="25">
     <p class="cover__sub">Seasonal decorating for homes &amp; local businesses</p>
     <div class="cover__booking">Now booking the 2026 season</div>
   </div>
