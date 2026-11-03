@@ -1,5 +1,5 @@
 /* ============================================================
-   JORDAN LYNN INTERIORS â€” MASTER STYLESHEET
+   JORDAN LYNN INTERIORS — MASTER STYLESHEET
    One file. All brand decisions. Change once, cascade everywhere.
    ============================================================ */
 
@@ -74,18 +74,6 @@ em { font-style: italic; }
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 0.02em;
-  display: flex;
-  align-items: center;
-}
-.nav__brand img {
-  height: 50px;
-  width: auto;
-  display: block;
-}
-@media (max-width: 780px) {
-  .nav__brand img {
-    height: 38px;
-  }
 }
 .nav__links {
   display: flex;
@@ -124,22 +112,40 @@ em { font-style: italic; }
 
 @media (max-width: 780px) {
   .nav__links {
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
     right: 0;
-    bottom: 0;
-    width: min(340px, 85vw);
     flex-direction: column;
+    align-items: stretch;
+    gap: 0;
     background: var(--off-white);
-    padding: 5rem 2rem 2rem;
-    gap: 1.5rem;
-    align-items: flex-start;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    box-shadow: -4px 0 20px rgba(0,0,0,0.05);
+    border-bottom: 1px solid var(--hair);
+    box-shadow: 0 16px 32px rgba(20, 20, 20, 0.08);
+    padding: 0.5rem 0 1.25rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
   }
-  .nav__links.is-open { transform: translateX(0); }
-  .nav__links a { font-size: 15px; }
+  .nav__links.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .nav__links a {
+    font-size: 15px;
+    padding: 1rem var(--gutter);
+    border-bottom: 1px solid var(--hair);
+  }
+  .nav__links a:last-child { border-bottom: 0; }
+  .nav__links .nav__cta {
+    margin: 1rem var(--gutter) 0;
+    padding: 0.85rem 1.4rem;
+    text-align: center;
+    border: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
   .nav__toggle { display: inline-flex; }
 }
 
@@ -197,9 +203,9 @@ section { padding: 7rem var(--gutter); }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=2000&q=85&auto=format');
+  background-image: url('../hero-living-room.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center 62%;
   z-index: 0;
 }
 .hero__bg::after {
@@ -370,7 +376,7 @@ section { padding: 7rem var(--gutter); }
 }
 .about__image {
   aspect-ratio: 4/5;
- background-image: url('../IMG_2197.jpeg');
+  background-image: url('../IMG_2197.jpeg');
   background-size: cover;
   background-position: center;
 }
@@ -731,7 +737,7 @@ section { padding: 7rem var(--gutter); }
   margin: 0;
 }
 
-/* honeypot field â€” spam filter, invisible to real users */
+/* honeypot field — spam filter, invisible to real users */
 .form__hp {
   position: absolute;
   left: -9999px;
@@ -827,4 +833,108 @@ footer {
   max-width: 48ch;
   margin: 0 auto 2.5rem;
   color: var(--stone);
+}
+
+/* ---------- PORTFOLIO GALLERY ---------- */
+.gallery { padding: 5rem var(--gutter) 3rem; }
+.gallery .wrap { display: flex; flex-direction: column; gap: 6rem; }
+.g-row { display: grid; gap: 2.5rem; align-items: start; }
+.g-row--wide { grid-template-columns: 1fr; }
+.g-row--60-40 { grid-template-columns: 3fr 2fr; }
+.g-row--40-60 { grid-template-columns: 2fr 3fr; }
+.g-row--half { grid-template-columns: 1fr 1fr; }
+.g-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.g-item--offset { margin-top: 5rem; }
+.g-item figcaption { margin-top: 1.25rem; }
+.g-item .label { display: block; margin-bottom: 0.4rem; }
+.g-item figcaption p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0;
+  max-width: 44ch;
+}
+.g-row--wide .g-item img { max-height: 82vh; object-fit: cover; }
+.g-item--narrow { max-width: 720px; margin-left: auto; margin-right: auto; }
+@media (max-width: 800px) {
+  .gallery .wrap { gap: 3.5rem; }
+  .g-row--60-40, .g-row--40-60, .g-row--half { grid-template-columns: 1fr; gap: 3.5rem; }
+  .g-item--offset { margin-top: 0; }
+}
+.g-item video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- PORTFOLIO CAROUSEL ---------- */
+.carousel { padding: 4rem var(--gutter) 2rem; }
+.carousel .wrap { max-width: 1100px; position: relative; }
+.carousel__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel__track::-webkit-scrollbar { display: none; }
+.carousel__slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+.carousel__slide img {
+  width: 100%;
+  height: min(68vh, 640px);
+  object-fit: contain;
+  display: block;
+}
+.carousel__caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+  min-height: 1.5rem;
+}
+.carousel__counter {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--stone);
+}
+.carousel__btn {
+  position: absolute;
+  top: calc(min(68vh, 640px) / 2);
+  transform: translateY(-50%);
+  background: none;
+  border: 1px solid var(--hair);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--ink);
+  background: var(--off-white);
+  transition: border-color 0.2s ease, color 0.2s ease;
+  z-index: 2;
+}
+.carousel__btn:hover { border-color: var(--tan); color: var(--tan); }
+.carousel__btn:focus-visible { outline: 2px solid var(--tan); outline-offset: 2px; }
+.carousel__btn svg { width: 1.1rem; height: 1.1rem; }
+.carousel__btn--prev { left: -1.5rem; }
+.carousel__btn--next { right: -1.5rem; }
+@media (max-width: 800px) {
+  .carousel__slide img { height: 60vh; }
+  .carousel__btn { top: 30vh; width: 2.6rem; height: 2.6rem; }
+  .carousel__btn--prev { left: 0.25rem; }
+  .carousel__btn--next { right: 0.25rem; }
 }
