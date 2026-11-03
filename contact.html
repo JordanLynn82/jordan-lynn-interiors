@@ -60,15 +60,15 @@
     </div>
   </div>
 
-  <!-- Form submissions are emailed to Jordan through FormSubmit (formsubmit.co).
-       The first submission sends an activation email that must be confirmed once. -->
-  <form action="https://formsubmit.co/jordan@jordanlynninteriors.com" method="POST" class="form">
-    <input type="hidden" name="_subject" value="New inquiry from jordanlynninteriors.com">
-    <input type="hidden" name="_next" value="https://jordanlynninteriors.com/thanks.html">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
+  <!-- Form submissions are emailed to Jordan through Web3Forms (web3forms.com).
+       The access key is public by design: it only allows sending to Jordan's inbox. -->
+  <form action="https://api.web3forms.com/submit" method="POST" class="form">
+    <input type="hidden" name="access_key" value="e1c136c6-8d21-4a1b-80df-c4d97e7e5014">
+    <input type="hidden" name="subject" value="New inquiry from jordanlynninteriors.com">
+    <input type="hidden" name="from_name" value="Jordan Lynn Interiors website">
+    <input type="hidden" name="redirect" value="https://jordanlynninteriors.com/thanks.html">
     <p class="form__hp">
-      <label>Don't fill this out if you're human: <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
+      <label>Don't fill this out if you're human: <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
     </p>
 
     <div class="form__row">
