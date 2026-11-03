@@ -81,6 +81,7 @@ em { font-style: italic; }
   align-items: center;
 }
 .nav__links a {
+  font-family: 'Cinzel', Georgia, serif;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.08em;
